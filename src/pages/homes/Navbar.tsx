@@ -38,7 +38,7 @@ const Navbar = () => {
         <header>
           <div
             className={`h-6 flex flex-row justify-between items-center bg-white py-10 pt-6   mx-auto px-3  ${
-              isDark ? "bg-black text-white " : ""
+              isDark ? "bg-black text-white border-b border-green-500 " : ""
             }`}
           >
             <NavLink to="/">
@@ -48,24 +48,52 @@ const Navbar = () => {
             <div
               className={`z[999] ${
                 open
-                  ? "visible fixed inset-0 z-[999] bg-dark-blue bg-opacity-65  w-44 h-60 p-4  "
+                  ? "visible fixed inset-0 z-[999] bg-dark-blue bg-opacity-65  w-full h-80 p-4 mt-14 "
                   : "invisible"
               }  md:visible `}
             >
               <div className="space-x-4 flex flex-col md:flex-row gap-5 md:gap-x-4 font-semibold text-[#AFAFAF] text-[16px] list-none ">
                 <NavLink
                   onClick={() => setOpen(false)}
-                  className="hover:text-black transition-all"
+                  className="hover:text-green-500 transition-all"
                   to="/winter-clothes"
                 >
                   All Winter Clothes
+                </NavLink>
+                <NavLink
+                  onClick={() => setOpen(false)}
+                  className="hover:text-green-500 transition-all"
+                  to="/leaderboard"
+                >
+                  Leaderboard
+                </NavLink>
+                <NavLink
+                  onClick={() => setOpen(false)}
+                  className="hover:text-green-500 transition-all"
+                  to="/community"
+                >
+                  Community
+                </NavLink>
+                <NavLink
+                  onClick={() => setOpen(false)}
+                  className="hover:text-green-500 transition-all"
+                  to="/volunteer"
+                >
+                  Volunteer Hub
+                </NavLink>
+                <NavLink
+                  onClick={() => setOpen(false)}
+                  className="hover:text-green-500 transition-all"
+                  to="/about-us"
+                >
+                  About Us
                 </NavLink>
 
                 {/* doneTodo for if user hav login */}
                 {token && (
                   <NavLink
                     onClick={() => setOpen(false)}
-                    className="hover:text-black transition-all "
+                    className="hover:text-green-500 transition-all "
                     to="/dashboard"
                   >
                     Dashboard
@@ -100,7 +128,7 @@ const Navbar = () => {
               )}
             </div>
 
-            <button className="md:hidden" onClick={handleToggle}>
+            <button className="md:hidden ml-8" onClick={handleToggle}>
               <p>
                 {" "}
                 {open ? (
@@ -109,7 +137,7 @@ const Navbar = () => {
                   </span>
                 ) : (
                   <FaBars />
-                )}{" "}
+                )}
               </p>
             </button>
           </div>

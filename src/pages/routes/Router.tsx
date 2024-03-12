@@ -10,6 +10,10 @@ import OverviewChart from "../dashboard/OverviewChart";
 import AllWinterCloths from "../dashboard/AllWinterCloths";
 import AddWinterCloth from "../dashboard/AddWinterCloth";
 import DonnerLeaderboard from "../DonnerLeaderboard";
+import Community from "../Community";
+import DigitalVolunteer from "../DigitalVolunteer";
+import CreateTestimonial from "../homes/donorTestimonial/CreateTestimonial";
+import Aboutus from "../Aboutus";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +31,18 @@ const router = createBrowserRouter([
       {
         path: "/leaderboard",
         element: <DonnerLeaderboard />,
+      },
+      {
+        path: "/community",
+        element: <Community />,
+      },
+      {
+        path: "/volunteer",
+        element: <DigitalVolunteer />,
+      },
+      {
+        path: "/about-us",
+        element: <Aboutus />,
       },
       {
         path: "/winter-clothes/:id",
@@ -62,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "create-winter-clothes",
         element: <AddWinterCloth />,
+      },
+      {
+        path: "create-testimonial",
+        element: <CreateTestimonial />,
       },
     ],
   },

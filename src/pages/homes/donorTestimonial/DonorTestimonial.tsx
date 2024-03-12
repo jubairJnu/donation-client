@@ -6,11 +6,13 @@ import "swiper/css";
 
 // import required modules
 import { Autoplay } from "swiper/modules";
-import TestimonialCard from "./TestimonialCard";
-
-import review from "../../../assets/Review.json";
+import TestimonialCard, { TTestimonialProps } from "./TestimonialCard";
+import { useGetAllTestimonialQuery } from "@/redux/features/testimonial.api";
 
 const DonorTestimonial = () => {
+  const { data: review } = useGetAllTestimonialQuery(undefined);
+
+
   return (
     <Container>
       <CommonHeader text="Donor Testimonial" />
@@ -37,8 +39,8 @@ const DonorTestimonial = () => {
         }}
         autoplay={{ delay: 3000, waitForTransition: true }}
       >
-        {review?.map((donorReview, index: number) => (
-          <SwiperSlide key={index}>
+        {review?.map((donorReview: TTestimonialProps) => (
+          <SwiperSlide key={donorReview._id}>
             <TestimonialCard donorReview={donorReview} />
           </SwiperSlide>
         ))}

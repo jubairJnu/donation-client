@@ -1,15 +1,19 @@
 import comma from "../../../assets/comma.png";
 
 export type TTestimonialProps = {
-  donorReview: {
-    name: string;
-    review: string;
-  }; // Add this line
+  _id: string;
+
+  name: string;
+  comment: string;
 };
 
 // motion
 
-const TestimonialCard = ({ donorReview }: TTestimonialProps) => {
+const TestimonialCard = ({
+  donorReview,
+}: {
+  donorReview: TTestimonialProps;
+}) => {
   return (
     <div className="w-full md:w-[390px] h-full md:h-[290px]  border-[1px] border-slate-200 rounded-md relative z-0 flex flex-col mx-auto hover:bg-primary-blue  transition-all  ">
       <img
@@ -19,7 +23,7 @@ const TestimonialCard = ({ donorReview }: TTestimonialProps) => {
       />
 
       <div className="flex-grow pt-10 px-5 text-slate-700 hover:text-white">
-        <p className="text-justify leading-relaxed">{donorReview?.review}</p>
+        <p className="text-justify leading-relaxed">{donorReview?.comment}</p>
       </div>
 
       <div className="pb-5 px-5 text-slate-700">
