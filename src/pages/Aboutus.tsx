@@ -55,7 +55,7 @@ const Aboutus = () => {
 
         <CommonHeader text="Our Volunteers" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {volunteers?.map((volunteer: Tvolunteer) => (
             <div
               key={volunteer._id}
@@ -64,7 +64,7 @@ const Aboutus = () => {
               <h2 className="text-xl">
                 <span className="font-bold me-2">Name:</span> {volunteer?.name}{" "}
               </h2>
-              <div className="flex items-center gap-5 justify-between mt-5">
+              <div className="flex items-center gap-3 justify-between mt-5">
                 <p className="flex items-center justify-center gap-2">
                   <span className="text-green-500 text-xl">
                     <IoMdMail />
@@ -72,7 +72,7 @@ const Aboutus = () => {
 
                   {volunteer?.email}
                 </p>
-                <p className="flex items-center justify-center gap-2">
+                <p className="flex items-center justify-center gap-1">
                   <span className="text-green-500 text-xl">
                     <FaPhoneAlt />
                   </span>
