@@ -16,7 +16,7 @@ const CreateTestimonial = () => {
 
   // post comment function
 
-  const [addTestimonial, { data: addData, isLoading }] =
+  const [addTestimonial, {  isLoading }] =
     useAddTestimonialMutation();
 
   const onSubmit = async (data: FieldValues) => {

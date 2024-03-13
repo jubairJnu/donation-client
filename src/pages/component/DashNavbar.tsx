@@ -67,23 +67,22 @@ const DashNavbar = () => {
                 >
                   Create Testimonial
                 </NavLink>
-
-                <div>
-                  {isDark ? (
-                    <button onClick={handleToggleTheme}>
-                      <span className="text-2xl">
-                        <MdLightMode />
-                      </span>
-                    </button>
-                  ) : (
-                    <button onClick={handleToggleTheme}>
-                      <span className="text-2xl">
-                        <MdDarkMode />
-                      </span>
-                    </button>
-                  )}
-                </div>
               </div>
+            </div>
+            <div>
+              {isDark ? (
+                <button onClick={handleToggleTheme}>
+                  <span className="text-2xl">
+                    <MdLightMode />
+                  </span>
+                </button>
+              ) : (
+                <button onClick={handleToggleTheme}>
+                  <span className="text-2xl">
+                    <MdDarkMode />
+                  </span>
+                </button>
+              )}
             </div>
 
             <button className="md:hidden" onClick={handleToggle}>

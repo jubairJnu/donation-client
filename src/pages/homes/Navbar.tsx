@@ -37,7 +37,7 @@ const Navbar = () => {
       <div className="w-full max-w-[1280px] mx-auto">
         <header>
           <div
-            className={`h-6 flex flex-row justify-between items-center bg-white py-10 pt-6   mx-auto px-3  ${
+            className={`h-6 flex flex-row justify-between items-center  py-10 pt-6   mx-auto px-3  ${
               isDark ? "bg-black text-white border-b border-green-500 " : ""
             }`}
           >
@@ -48,7 +48,7 @@ const Navbar = () => {
             <div
               className={`z[999] ${
                 open
-                  ? "visible fixed inset-0 z-[999] bg-dark-blue bg-opacity-65  w-full h-80 p-4 mt-14 "
+                  ? "visible fixed inset-0 z-[999] bg-dark-blue bg-opacity-65  w-full h-80 p-4 mt-14  "
                   : "invisible"
               }  md:visible `}
             >

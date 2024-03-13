@@ -1,10 +1,18 @@
 import { useGetAllVlounteerQuery } from "@/redux/features/volunteer.api";
 import CommonHeader from "./component/utils/CommonHeader";
-import WhoWe from "./homes/WhoWe";
+
 import { IoMdMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Container from "./component/utils/Container";
+
+type Tvolunteer = {
+  _id: string;
+  name: string;
+  email: string;
+  phone: string;
+  location: string;
+};
 
 const Aboutus = () => {
   const { data: volunteers } = useGetAllVlounteerQuery(undefined);
@@ -48,7 +56,7 @@ const Aboutus = () => {
         <CommonHeader text="Our Volunteers" />
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 ">
-          {volunteers?.map((volunteer) => (
+          {volunteers?.map((volunteer: Tvolunteer) => (
             <div
               key={volunteer._id}
               className="bg-slate-100 shadow-[5px_1px_10px_1px_rgba(0,0,0,0.3)]  rounded-xl py-5 px-3 "

@@ -1,7 +1,6 @@
-import { useRef } from "react";
 import CommonHeader from "../component/utils/CommonHeader";
 import Container from "../component/utils/Container";
-import { Variants, motion, useInView } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 const hiddenMotion: Variants = {
   hidden: { opacity: 0.2 },
   visible: {
@@ -17,26 +16,11 @@ const hiddenMotion: Variants = {
 };
 
 const WhoWe = () => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const inView = useInView(ref);
   return (
     <Container>
       <CommonHeader text="Who We Are" />
 
-      <motion.div
-        ref={ref}
-        animate={
-          inView
-            ? { opacity: 1, x: 0 }
-            : {
-                opacity: 0,
-                x: -500,
-                transition: { delay: 0.7, duration: 2, ease: "easeInOut" },
-              }
-        }
-        className="grid grid-cols-1 lg:grid-cols-3 gap-10 "
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 ">
         <div>
           <h1 className="text-center text-xl font-bold mb-5">Mission</h1>
           <p className="text-slate-700 text-justify">
@@ -70,7 +54,7 @@ const WhoWe = () => {
             emergencies.
           </p>
         </motion.div>
-      </motion.div>
+      </div>
     </Container>
   );
 };
